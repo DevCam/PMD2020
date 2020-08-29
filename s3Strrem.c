@@ -48,7 +48,7 @@ void strrem(char* input, char target)
   // [H][l][l][a][ ][\0][u][n][d][o][\0]
   
   // Solucion final - sin corchetes NI memoria adicional
-  // usando solamente aritmetica de operadores.
+  // usando solamente aritmetica de apuntadores.
   char* cpiadora;
   for(cpiadora = input; *input != '\0'; input++)
   {
