@@ -149,6 +149,63 @@ int BST_add_to_tree(BinaryNode* focusNode, int val)
   }
 }
 
+int BST_search_node(BinaryNode* focusNode, int val)
+{
+  // focusNode == root (en la primer llamada recursiva)
+  if(focusNode == NULL)
+    return 0;
+  if(focusNode->value == val)
+    return 1;
+  if(focusNode->value > val)
+    return BST_search_node(focusNode->left, val);
+  if(focusNode->value < val)
+    return BST_search_node(focusNode->right, val);
+}
+
+int BST_contains(BST* t, int val)
+{
+  return BST_search_node(t->root, val);
+}
+
+// in-order a.k.a MENOR a MAYOR
+
+void BST_print_nodes_InOrder(BinaryNode* focusNode)
+{
+  if(focusNode == NULL)
+    return;
+  else {
+    // inOrder
+    BST_print_nodes_InOrder(focusNode->left);
+    printf("%d ", focusNode->value);
+    BST_print_nodes_InOrder(focusNode->right);
+
+    // si fuera PRE order
+    /*
+     * VISITAMOS print
+     * RIGHT
+     * LEFT
+     */
+
+    // si fuera POST order
+    /*
+    * RIGHT
+    * LEFT
+    * VISITAMOS print
+    */
+
+    return;
+  }
+}
+
+// Post Order, PreOrder.
+
+void BST_Print_InOrder(BST* t)
+{
+  BST_print_nodes_InOrder(t->root);
+}
+
+
+// log2N
 int BST_add(BST* t, int val)
 {
   if(t->root == NULL)
@@ -166,9 +223,4 @@ int BST_add(BST* t, int val)
     }
   }
   return 1;
-}
-
-int BST_contains(BST* t, int val)
-{
-
 }

@@ -38,6 +38,8 @@ BST* BST_new();
 void BST_destroy(BST*);
 int BST_add(BST*, int);
 int BST_contains(BST*, int);
+void BST_Print_InOrder(BST* t);
+void BST_print_nodes_InOrder(BinaryNode* focusNode);
 
 
 #endif //LION_SANDBOX_SETS_H

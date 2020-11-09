@@ -3,20 +3,14 @@
 
 int main()
 {
-  ArraySet* S = array_set_new(6);
+  BST* T = BST_new();
+  BST_add(T, 10);
+  BST_add(T, 5);
+  BST_add(T, 11);
+  BST_add(T, 3);
+  BST_add(T, 7);
 
-  array_set_add(S, 'a');
-  array_set_add(S, 'b');
-  array_set_add(S, 'c');
-
-  array_set_pretty_print(S);
-
-  array_set_remove(S, 'a');
-
-  if(array_set_contains(S, 'c'));
-
-
-  array_set_pretty_print(S);
+  BST_Print_InOrder(T);
 
 
   return 0;
